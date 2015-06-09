@@ -20,6 +20,15 @@
         range:self.body.selectedRange];
 }
 
+- (IBAction)outlineBodySection{
+    [self.body.textStorage addAttributes:@{ NSStrokeWidthAttributeName: @-3, NSStrokeColorAttributeName: [UIColor blackColor] }
+                                   range:self.body.selectedRange];
+}
+- (IBAction)unoutlineBodySection{
+    [self.body.textStorage removeAttribute:NSStrokeWidthAttributeName
+                                     range:self.body.selectedRange];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
