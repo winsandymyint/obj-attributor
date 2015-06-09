@@ -9,10 +9,16 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (strong, nonatomic) IBOutlet UITextView *body;
+@property (strong, nonatomic) IBOutlet UILabel *headline;
 
 @end
 
 @implementation ViewController
+- (IBAction)changeBodySectionColorToMatchBackgroundOfButton:(UIButton *)sender {
+    [self.body.textStorage addAttribute:NSForegroundColorAttributeName value:sender.backgroundColor
+        range:self.body.selectedRange];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
